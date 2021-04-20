@@ -1,0 +1,1220 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG",
+    "name": "External Port Scan Blocklist Workflow",
+    "title": "External Port Scan Blocklist Workflow",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "swc_api_key",
+          "type": "datatype.secure_string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JLKNY9II2T73gDDPVM2X9KQOkTzz6zjCV",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "global_blocklist_contents",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O0YC82k9It3ubjQBK5fX1xfsCgd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "blocklisted_ip_name",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O136N7UFV6ST1PH33QY2r7GYkMd",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01ILBCYQL0DNB0ZM9s64NMRkkG3jAqolSK8",
+        "properties": {
+          "scope": "output",
+          "name": "Port_Scan_Alert_Table",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O0UXF57Wpm6hbzFJmJCHUa3EF0w",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "swc_alert_url",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O0ZHU72iAQLri2gsCahmHGqLgsx",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "wxt_access_token",
+          "type": "datatype.secure_string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JLKOB3PEWAW4uWnCGikBYKZVvx5HCJ2Os",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.secure_string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "cdo_api_key",
+          "type": "datatype.secure_string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JLKQE5BNUZY6zT6eiPm2WIELZ8GtPChlr",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "updated_global_blocklist_contents",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O10OP1uCPXvqVpGU2DiufF439WC",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "wxt_room_id",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01JLKOL2BM9EI7Prp81IrVLTUEbvE6c47gU",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "global_blocklist_uid",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O11VY0dgnSwYQVhbQxcdvwEdwa0",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "tabletype_01IMR00OGWEY16FaalvHZYMCKD39cbhuQrW",
+        "properties": {
+          "scope": "output",
+          "name": "ip_observ_list",
+          "type": "datatype.table",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O0TNE428UcKLeyRmKINYZPdYkz5",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "blocklisted_ip_uid",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O0W294vBSWop5Jrp4vGqQ8fqrbi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "task_id",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O0OUG5DTFos0fNEdG6bCByyw1He",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "datatype.string",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "blocklisted-ip",
+          "type": "datatype.string",
+          "is_required": false
+        },
+        "unique_name": "variable_workflow_01IX60Q9O0X5S4gRYXMjj3jVm8knHjt74gq",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "External Port Scan Blocklist Workflow",
+      "runtime_user": {
+        "override_target_runtime_user": false,
+        "specify_on_workflow_start": false,
+        "target_default": true
+      },
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01IX60R3NV4R94hjsIV41fv6vm5GxTkX6Pi",
+        "name": "Group",
+        "title": "Gather Port Scan Alerts",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Gather Port Scan Alerts",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01IX60RDL1IBR6lvn6KqKpQXbsYZvYveuxf",
+            "name": "HTTP Request",
+            "title": "Get Alerts From Stealthwatch Cloud",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.input.variable_workflow_01JLKNY9II2T73gDDPVM2X9KQOkTzz6zjCV$"
+                }
+              ],
+              "display_name": "Get Alerts From Stealthwatch Cloud",
+              "method": "GET",
+              "relative_url": "/api/v3/alerts/alert/?status=open&search=Inbound Port Scanner",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01JLJHG0U6UZ13EuKREavGrvz7K5pHlZGdw"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01IX60ROL1V1O6kgCkpZ7jr30Kezkv742p0",
+            "name": "Read Table from JSON",
+            "title": "Create a list of Alert IDs",
+            "type": "corejava.read_table_from_json",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "continue_on_failure": false,
+              "display_name": "Create a list of Alert IDs",
+              "input_json": "$activity.definition_activity_01IX60RDL1IBR6lvn6KqKpQXbsYZvYveuxf.output.response_body$",
+              "jsonpath_query": "$[\"objects\"]",
+              "persist_output": true,
+              "populate_columns": false,
+              "skip_execution": false,
+              "table_columns": [
+                {
+                  "column_name": "id",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "text",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "type",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "time",
+                  "column_type": "string"
+                },
+                {
+                  "column_name": "description",
+                  "column_type": "string"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01IX60RZ9O51B6FFLiR0pK5Yn50ZifAcrpn",
+            "name": "For Each",
+            "title": "Get Observations Per Alert",
+            "type": "logic.for_each",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Get Observations Per Alert",
+              "skip_execution": false,
+              "source_array": "$activity.definition_activity_01IX60ROL1V1O6kgCkpZ7jr30Kezkv742p0.output.read_table_from_json$"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01IX60SAVBWTY63xAC9KH8DlxlxCq1uGDFT",
+                "name": "HTTP Request",
+                "title": "Get Stealthwatch Cloud Alert Observables",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.input.variable_workflow_01JLKNY9II2T73gDDPVM2X9KQOkTzz6zjCV$"
+                    }
+                  ],
+                  "display_name": "Get Stealthwatch Cloud Alert Observables",
+                  "method": "GET",
+                  "relative_url": "/api/v3/observations/all?alert=$activity.definition_activity_01IX60RZ9O51B6FFLiR0pK5Yn50ZifAcrpn.input.source_array[@].id$&limit=1&ordering=-time",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "skip_execution": false,
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01JLJHG0U6UZ13EuKREavGrvz7K5pHlZGdw"
+                  }
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01IX60SKY2JED6rBeUE8GYvp3io9PnOy9NH",
+                "name": "Read Table from JSON",
+                "title": "Create a List of Observables",
+                "type": "corejava.read_table_from_json",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Create a List of Observables",
+                  "input_json": "$activity.definition_activity_01IX60SAVBWTY63xAC9KH8DlxlxCq1uGDFT.output.response_body$",
+                  "jsonpath_query": "$[\"objects\"]",
+                  "persist_output": true,
+                  "populate_columns": false,
+                  "skip_execution": false,
+                  "table_columns": [
+                    {
+                      "column_name": "scanner_ip",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "scanned_ip",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "time",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "observation_name",
+                      "column_type": "string"
+                    },
+                    {
+                      "column_name": "end_time",
+                      "column_type": "string"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01IX60SVXGM0O5FxBJUh5W50ihl8gbfZgg4",
+                "name": "For Each",
+                "title": "Add Observations to Port Scan Alert Table Variable",
+                "type": "logic.for_each",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Add Observations to Port Scan Alert Table Variable",
+                  "skip_execution": false,
+                  "source_array": "$activity.definition_activity_01IX60SKY2JED6rBeUE8GYvp3io9PnOy9NH.output.read_table_from_json$"
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01IX60T7ENQB91vavBuwKbx4f1POrUFTFOQ",
+                    "name": "Add Row to Table",
+                    "title": "Add Row to Table",
+                    "type": "core.addrowtotable",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Add Row to Table",
+                      "input_table": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0UXF57Wpm6hbzFJmJCHUa3EF0w$",
+                      "row": [
+                        {
+                          "key": "alert_id",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60RZ9O51B6FFLiR0pK5Yn50ZifAcrpn.input.source_array[@].id$"
+                        },
+                        {
+                          "key": "alert_text",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60RZ9O51B6FFLiR0pK5Yn50ZifAcrpn.input.source_array[@].text$"
+                        },
+                        {
+                          "key": "alert_type",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60RZ9O51B6FFLiR0pK5Yn50ZifAcrpn.input.source_array[@].type$"
+                        },
+                        {
+                          "key": "alert_description",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60RZ9O51B6FFLiR0pK5Yn50ZifAcrpn.input.source_array[@].description$"
+                        },
+                        {
+                          "key": "alert_time",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60RZ9O51B6FFLiR0pK5Yn50ZifAcrpn.input.source_array[@].time$"
+                        },
+                        {
+                          "key": "observ_time",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60SVXGM0O5FxBJUh5W50ihl8gbfZgg4.input.source_array[@].time$"
+                        },
+                        {
+                          "key": "observ_name",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60SVXGM0O5FxBJUh5W50ihl8gbfZgg4.input.source_array[@].observation_name$"
+                        },
+                        {
+                          "key": "observ_end_time",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60SVXGM0O5FxBJUh5W50ihl8gbfZgg4.input.source_array[@].end_time$"
+                        },
+                        {
+                          "key": "scanner_ip",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60SVXGM0O5FxBJUh5W50ihl8gbfZgg4.input.source_array[@].scanner_ip$"
+                        },
+                        {
+                          "key": "scanned_ip",
+                          "type": "string",
+                          "value": "$activity.definition_activity_01IX60SVXGM0O5FxBJUh5W50ihl8gbfZgg4.input.source_array[@].scanned_ip$"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01IX60TIZXDHQ7f0Kpwktz4kESNQKrTxHxo",
+        "name": "Group",
+        "title": "Webex Teams Alert and Approval Request Message",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Webex Teams Alert and Approval Request Message",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01IX60TSLAFLK7EqS6zDMqChOoby2GfwfgD",
+            "name": "Create Approval Request",
+            "title": "Create Global Blocklist Approval Request",
+            "type": "task.approval_request",
+            "base_type": "activity",
+            "properties": {
+              "approval_choices": [
+                "Approve",
+                "Reject"
+              ],
+              "assignees": [
+                "edmcnich@cisco.com"
+              ],
+              "continue_on_failure": false,
+              "display_name": "Create Global Blocklist Approval Request",
+              "due_date": {
+                "is_relative_time": true,
+                "is_specified_date": false,
+                "relative_time": {
+                  "duration": 1,
+                  "time_units": "days"
+                },
+                "set_due_date": true
+              },
+              "expiration_date": {
+                "is_relative_time": true,
+                "is_specified_date": false,
+                "relative_time": {
+                  "duration": 7,
+                  "time_units": "days"
+                }
+              },
+              "expiration_status": "Expired",
+              "minimum_approvals": 1,
+              "priority": "high",
+              "skip_execution": false,
+              "subject_line": "Approval Needed - Automated Blocklist Generation",
+              "task_message": "Stealthwatch Cloud has detected an External Port Scanner Alert. This is an approval request to automate the deployment of IP address $workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0UXF57Wpm6hbzFJmJCHUa3EF0w[-1].scanner_ip$ to the Global Blocklist.",
+              "task_owner": "edmcnich@cisco.com",
+              "task_requestor": "edmcnich@cisco.com"
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01IX60U1HIMTJ3jdTjKU0fUw4XCe5UYpB77",
+            "name": "Set Variables",
+            "title": "Set Task ID Variable",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Set Task ID Variable",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0OUG5DTFos0fNEdG6bCByyw1He$",
+                  "variable_value_new": "$activity.definition_activity_01IX60TSLAFLK7EqS6zDMqChOoby2GfwfgD.output.task_id$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01IX60UAK1E6R4eu19CjGeTy8i8GvwPCyDf",
+            "name": "Split String",
+            "title": "Parsing the Stealthwatch Cloud Alert URL",
+            "type": "core.splitstring",
+            "base_type": "activity",
+            "properties": {
+              "boundaries": [
+                {
+                  "boundary": "\\n"
+                }
+              ],
+              "continue_on_failure": false,
+              "display_name": "Parsing the Stealthwatch Cloud Alert URL",
+              "input_string": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0UXF57Wpm6hbzFJmJCHUa3EF0w[-1].alert_text$",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01IX60UK48TU91KGpB5fPAFZkdfNMMLT9bc",
+            "name": "HTTP Request",
+            "title": "Send Webex Teams Message",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "body": "{\n  \"roomId\": \"$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.input.variable_workflow_01JLKOL2BM9EI7Prp81IrVLTUEbvE6c47gU$\",\n  \"markdown\": \"**ALERT: External Port Scan Detected!!** <br/>Stealthwatch Cloud has triggered an $workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0UXF57Wpm6hbzFJmJCHUa3EF0w[-1].alert_type$ Alert.<br/> <br/>To review this alert in Stealthwatch Cloud click $activity.definition_activity_01IX60UAK1E6R4eu19CjGeTy8i8GvwPCyDf.output.parts[-1]$.<br/> <br/>To start a SecureX Threat Respoonse Investigation click https://visibility.amp.cisco.com/investigate?q=$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0UXF57Wpm6hbzFJmJCHUa3EF0w[-1].scanner_ip$%0A$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0UXF57Wpm6hbzFJmJCHUa3EF0w[-1].scanned_ip$.<br/> <br/>To **Approve/Reject** the Automation of adding the attacker IP to the Global Blocklist click https://securex-ao.us.security.cisco.com/orch-ui/tasks/$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0OUG5DTFos0fNEdG6bCByyw1He$/.\"\n}",
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.input.variable_workflow_01JLKOB3PEWAW4uWnCGikBYKZVvx5HCJ2Os$"
+                }
+              ],
+              "display_name": "Send Webex Teams Message",
+              "method": "POST",
+              "relative_url": "/v1/messages",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01GWVYO6DESJV4QggBd683EEfuO1pm4lQAb"
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01IX60UW5NDFN13gfWyIxqvZXRYN6vP5wh9",
+            "name": "Wait For Event",
+            "title": "Wait For Approval",
+            "type": "task.wait_for_event",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Wait For Approval",
+              "event_info": {
+                "add_event": true,
+                "event_definition": {
+                  "conditions": {
+                    "left_operand": "$output.status.state$",
+                    "operator": "eq",
+                    "right_operand": "Completed"
+                  }
+                }
+              },
+              "event_type": "approval_task.event",
+              "skip_execution": true
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01IX60V4C8BOS03FbzJ0VhK8FHgA0ARvHp9",
+        "name": "Group",
+        "title": "Add Attacker IP to Global Blocklist",
+        "type": "logic.group",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Add Attacker IP to Global Blocklist",
+          "skip_execution": false
+        },
+        "object_type": "definition_activity",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01IX60VE55V9W4jONyl0R3IJVdvR90C3us2",
+            "name": "Parallel Block",
+            "title": "Get Blocklist Object and Group Infomation",
+            "type": "logic.parallel",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Get Blocklist Object and Group Infomation",
+              "skip_execution": false
+            },
+            "object_type": "definition_activity",
+            "blocks": [
+              {
+                "unique_name": "definition_activity_01IX60VM8U7BX7hcCoZe6gBPtTKKDTLGMxq",
+                "name": "Parallel Branch",
+                "title": "Blacklist Object",
+                "type": "logic.parallel_block",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Blacklist Object",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01IX60VQAGPM82QFvlEZTfiZwcn2bhsLd8p",
+                    "name": "Set Variables",
+                    "title": "Set Scanner_IP to Blocklisted-IP Variable",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Set Scanner_IP to Blocklisted-IP Variable",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0X5S4gRYXMjj3jVm8knHjt74gq$",
+                          "variable_value_new": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0UXF57Wpm6hbzFJmJCHUa3EF0w[-1].scanner_ip$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01IX60VZRKC5Y4BjqAkod9RrcIt0oXpxWyp",
+                    "name": "HTTP Request",
+                    "title": "Check CDO for Blocklist Object",
+                    "type": "web-service.http_request",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "allow_auto_redirect": true,
+                      "content_type": "application/json",
+                      "continue_on_error_status_code": false,
+                      "continue_on_failure": false,
+                      "custom_headers": [
+                        {
+                          "name": "Authorization",
+                          "value": "Bearer $workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.input.variable_workflow_01JLKQE5BNUZY6zT6eiPm2WIELZ8GtPChlr$"
+                        }
+                      ],
+                      "display_name": "Check CDO for Blocklist Object",
+                      "method": "GET",
+                      "relative_url": "/aegis/rest/v1/services/targets/objects?q=name:blocklisted-$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0X5S4gRYXMjj3jVm8knHjt74gq$",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_01IQ5B96AUP8O6dGoS4AcWosLEHkyCfkvTR"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01IX60WASF3TD20pDIUb5mWImNhPKbO4LIn",
+                    "name": "JSONPath Query",
+                    "title": "Get Blocklisted-IP Object Name",
+                    "type": "corejava.jsonpathquery",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": true,
+                      "display_name": "Get Blocklisted-IP Object Name",
+                      "input_json": "$activity.definition_activity_01IX60VZRKC5Y4BjqAkod9RrcIt0oXpxWyp.output.response_body$",
+                      "jsonpath_queries": [
+                        {
+                          "jsonpath_query": "$[0][\"name\"]",
+                          "jsonpath_query_name": "json_object_name",
+                          "jsonpath_query_type": "string"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01IX60WJZPM3P6TTECcGJe5YqN826IlMaES",
+                    "name": "Condition Block",
+                    "title": "If Blocklist Object",
+                    "type": "logic.if_else",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "If Blocklist Object",
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity",
+                    "blocks": [
+                      {
+                        "unique_name": "definition_activity_01IX60WSJKUON4bIafKQNQom3FuImOj8OrT",
+                        "name": "Condition Branch",
+                        "title": "Exists",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$activity.definition_activity_01IX60WASF3TD20pDIUb5mWImNhPKbO4LIn.output.succeeded$",
+                            "operator": "eq",
+                            "right_operand": true
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "Exists",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01IX60WXXJ7VL0PIe4nI9FN6H16Zea1lvoD",
+                            "name": "Completed",
+                            "title": "Completed",
+                            "type": "logic.completed",
+                            "base_type": "activity",
+                            "properties": {
+                              "completion_type": "succeeded",
+                              "continue_on_failure": false,
+                              "display_name": "Completed",
+                              "result_message": "Blocklisted Object Already Exists",
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      },
+                      {
+                        "unique_name": "definition_activity_01IX60X6O4ZB762XUrLEa3KEvNt3hpsU1d7",
+                        "name": "Condition Branch",
+                        "title": "Doesn't Exist",
+                        "type": "logic.condition_block",
+                        "base_type": "activity",
+                        "properties": {
+                          "condition": {
+                            "left_operand": "$activity.definition_activity_01IX60WASF3TD20pDIUb5mWImNhPKbO4LIn.output.succeeded$",
+                            "operator": "eq",
+                            "right_operand": false
+                          },
+                          "continue_on_failure": false,
+                          "display_name": "Doesn't Exist",
+                          "skip_execution": false
+                        },
+                        "object_type": "definition_activity",
+                        "actions": [
+                          {
+                            "unique_name": "definition_activity_01IX60XCGFT1E25iL9d2S1xFZlK5tDy478n",
+                            "name": "HTTP Request",
+                            "title": "Create Blocklist Object",
+                            "type": "web-service.http_request",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "allow_auto_redirect": true,
+                              "body": "{\n  \"name\": \"blocklisted-$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0X5S4gRYXMjj3jVm8knHjt74gq$\",\n  \"@typeName\": \"LocalObject\",\n  \"objectType\": \"NETWORK_OBJECT\",\n  \"contents\": [\n    {\n      \"@type\": \"NetworkContent\",\n      \"sourceElement\": \"$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0X5S4gRYXMjj3jVm8knHjt74gq$/32\",\n      \"destinationElement\": null,\n      \"wildcardMaskElement\": null\n    }\n  ],\n  \"deviceType\": \"FTD\",\n  \"stateMachineContext\": {}\n}",
+                              "content_type": "application/json",
+                              "continue_on_error_status_code": false,
+                              "continue_on_failure": false,
+                              "custom_headers": [
+                                {
+                                  "name": "Authorization",
+                                  "value": "Bearer $workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.input.variable_workflow_01JLKQE5BNUZY6zT6eiPm2WIELZ8GtPChlr$"
+                                }
+                              ],
+                              "display_name": "Create Blocklist Object",
+                              "method": "POST",
+                              "relative_url": "/aegis/rest/v1/services/targets/objects",
+                              "runtime_user": {
+                                "override_target_runtime_user": false,
+                                "target_default": true
+                              },
+                              "skip_execution": false,
+                              "target": {
+                                "override_workflow_target": true,
+                                "target_id": "definition_target_01IQ5B96AUP8O6dGoS4AcWosLEHkyCfkvTR"
+                              }
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01IX60XMI84YU5GJ0TvTEw0UivJJZY2uPnH",
+                            "name": "JSONPath Query",
+                            "title": "Get Blocklisted Object UID and Name",
+                            "type": "corejava.jsonpathquery",
+                            "base_type": "activity",
+                            "properties": {
+                              "action_timeout": 180,
+                              "continue_on_failure": false,
+                              "display_name": "Get Blocklisted Object UID and Name",
+                              "input_json": "$activity.definition_activity_01IX60XCGFT1E25iL9d2S1xFZlK5tDy478n.output.response_body$",
+                              "jsonpath_queries": [
+                                {
+                                  "jsonpath_query": "$[\"uid\"]",
+                                  "jsonpath_query_name": "blocklisted_ip_uid",
+                                  "jsonpath_query_type": "string"
+                                },
+                                {
+                                  "jsonpath_query": "$[\"name\"]",
+                                  "jsonpath_query_name": "blocklisted_ip_name",
+                                  "jsonpath_query_type": "string"
+                                }
+                              ],
+                              "skip_execution": false
+                            },
+                            "object_type": "definition_activity"
+                          },
+                          {
+                            "unique_name": "definition_activity_01IX60XWL8H8U10PLDqOD1opKryLeex1P3c",
+                            "name": "Set Variables",
+                            "title": "Set Blocklisted Object Name and UID Variables",
+                            "type": "core.set_multiple_variables",
+                            "base_type": "activity",
+                            "properties": {
+                              "continue_on_failure": false,
+                              "display_name": "Set Blocklisted Object Name and UID Variables",
+                              "skip_execution": false,
+                              "variables_to_update": [
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O136N7UFV6ST1PH33QY2r7GYkMd$",
+                                  "variable_value_new": "$activity.definition_activity_01IX60XMI84YU5GJ0TvTEw0UivJJZY2uPnH.output.jsonpath_queries.blocklisted_ip_name$"
+                                },
+                                {
+                                  "variable_to_update": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0W294vBSWop5Jrp4vGqQ8fqrbi$",
+                                  "variable_value_new": "$activity.definition_activity_01IX60XMI84YU5GJ0TvTEw0UivJJZY2uPnH.output.jsonpath_queries.blocklisted_ip_uid$"
+                                }
+                              ]
+                            },
+                            "object_type": "definition_activity"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "unique_name": "definition_activity_01IX60Y5ZDRRN3mBfmggM8C9DhuozM4aVlP",
+                "name": "Parallel Branch",
+                "title": "Blocklist Group",
+                "type": "logic.parallel_block",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Blocklist Group",
+                  "skip_execution": false
+                },
+                "object_type": "definition_activity",
+                "actions": [
+                  {
+                    "unique_name": "definition_activity_01IX60YAG67UO1a8HDORDAV7WrmFVMNPZl9",
+                    "name": "HTTP Request",
+                    "title": "Get Global Blocklist Info",
+                    "type": "web-service.http_request",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "allow_auto_redirect": true,
+                      "content_type": "application/json",
+                      "continue_on_error_status_code": false,
+                      "continue_on_failure": false,
+                      "custom_headers": [
+                        {
+                          "name": "Authorization",
+                          "value": "Bearer $workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.input.variable_workflow_01JLKQE5BNUZY6zT6eiPm2WIELZ8GtPChlr$"
+                        }
+                      ],
+                      "display_name": "Get Global Blocklist Info",
+                      "method": "GET",
+                      "relative_url": "/aegis/rest/v1/services/targets/objects?q=name:Global_Blocklist",
+                      "runtime_user": {
+                        "override_target_runtime_user": false,
+                        "target_default": true
+                      },
+                      "skip_execution": false,
+                      "target": {
+                        "override_workflow_target": true,
+                        "target_id": "definition_target_01IQ5B96AUP8O6dGoS4AcWosLEHkyCfkvTR"
+                      }
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01IX60YKQI9QS5KvqGcX8zo961vxVdEyqkY",
+                    "name": "JSONPath Query",
+                    "title": "Get Global Blocklist Objects",
+                    "type": "corejava.jsonpathquery",
+                    "base_type": "activity",
+                    "properties": {
+                      "action_timeout": 180,
+                      "continue_on_failure": false,
+                      "display_name": "Get Global Blocklist Objects",
+                      "input_json": "$activity.definition_activity_01IX60YAG67UO1a8HDORDAV7WrmFVMNPZl9.output.response_body$",
+                      "jsonpath_queries": [
+                        {
+                          "jsonpath_query": "$[0][\"uid\"]",
+                          "jsonpath_query_name": "global_blocklist_uid",
+                          "jsonpath_query_type": "string"
+                        },
+                        {
+                          "jsonpath_query": "$[0][\"contents\"]",
+                          "jsonpath_query_name": "global_blocklist_contents",
+                          "jsonpath_query_type": "string"
+                        }
+                      ],
+                      "skip_execution": false
+                    },
+                    "object_type": "definition_activity"
+                  },
+                  {
+                    "unique_name": "definition_activity_01IX60YUBW7XY4vWBs5c4oLGlSqwZe1irnt",
+                    "name": "Set Variables",
+                    "title": "Set Global Blacklist Variables",
+                    "type": "core.set_multiple_variables",
+                    "base_type": "activity",
+                    "properties": {
+                      "continue_on_failure": false,
+                      "display_name": "Set Global Blacklist Variables",
+                      "skip_execution": false,
+                      "variables_to_update": [
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O11VY0dgnSwYQVhbQxcdvwEdwa0$",
+                          "variable_value_new": "$activity.definition_activity_01IX60YKQI9QS5KvqGcX8zo961vxVdEyqkY.output.jsonpath_queries.global_blocklist_uid$"
+                        },
+                        {
+                          "variable_to_update": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0YC82k9It3ubjQBK5fX1xfsCgd$",
+                          "variable_value_new": "$activity.definition_activity_01IX60YKQI9QS5KvqGcX8zo961vxVdEyqkY.output.jsonpath_queries.global_blocklist_contents$"
+                        }
+                      ]
+                    },
+                    "object_type": "definition_activity"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01IX60Z3Z3NYG05UtpwOjXvK3nZyLLRybAt",
+            "name": "Set Variables",
+            "title": "Building Global Blocklist Variable",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Building Global Blocklist Variable",
+              "skip_execution": false,
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O10OP1uCPXvqVpGU2DiufF439WC$",
+                  "variable_value_new": "{\"@typeName\":\"LocalObject\",\"contents\":$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0YC82k9It3ubjQBK5fX1xfsCgd$,\"description\":\"Global Blocklist for Policies\",\"deviceType\":\"FTD\",\"objectType\":\"NETWORK_GROUP\"}"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01IX60ZGVDJG14oFK4fvOlvJjwbK9IjepQD",
+            "name": "Replace String",
+            "title": "Update Global Blocklist Variable",
+            "type": "core.replacestring",
+            "base_type": "activity",
+            "properties": {
+              "continue_on_failure": false,
+              "display_name": "Update Global Blocklist Variable",
+              "input_string": "$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O10OP1uCPXvqVpGU2DiufF439WC$",
+              "replace_list": [
+                {
+                  "replaced_string": "],\"description\"",
+                  "replacement_string": ",{\"@type\":\"ObjectReferenceContent\",\"name\":\"$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O136N7UFV6ST1PH33QY2r7GYkMd$\",\"type\":\"NETWORK_OBJECT\",\"uid\":\"$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O0W294vBSWop5Jrp4vGqQ8fqrbi$\"}],\"description\""
+                }
+              ],
+              "skip_execution": false
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01IX6105UB0QU7WQCiGDiGnbgqV5Ewq63LK",
+            "name": "HTTP Request",
+            "title": "Update Global Blocklist",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "body": "$activity.definition_activity_01IX60ZGVDJG14oFK4fvOlvJjwbK9IjepQD.output.result_string$",
+              "content_type": "application/json",
+              "continue_on_error_status_code": false,
+              "continue_on_failure": false,
+              "custom_headers": [
+                {
+                  "name": "Authorization",
+                  "value": "Bearer $workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.input.variable_workflow_01JLKQE5BNUZY6zT6eiPm2WIELZ8GtPChlr$"
+                }
+              ],
+              "display_name": "Update Global Blocklist",
+              "method": "PUT",
+              "relative_url": "/aegis/rest/v1/services/targets/objects/$workflow.definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG.output.variable_workflow_01IX60Q9O11VY0dgnSwYQVhbQxcdvwEdwa0$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "skip_execution": false,
+              "target": {
+                "override_workflow_target": true,
+                "target_id": "definition_target_01IQ5B96AUP8O6dGoS4AcWosLEHkyCfkvTR"
+              }
+            },
+            "object_type": "definition_activity"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "triggers": {
+    "triggerschedule_01JLKTQ45DBRT4ftv6CnC3K9CKjV6KekkcD": {
+      "workflow_id": "definition_workflow_01IX60Q9ZOUNC53TrtTklQpSUzjThHgpEnG",
+      "name": "5 Minute Trigger",
+      "title": "",
+      "lowercase_name": "schedule.5_minute_trigger",
+      "type": "schedule",
+      "base_type": "trigger",
+      "ref_id": "schedule_01IWC4BG8HN0K1uOiu0oazWF6uBO8tkjxLF",
+      "version": "",
+      "disabled": true,
+      "unique_name": "triggerschedule_01JLKTQ45DBRT4ftv6CnC3K9CKjV6KekkcD",
+      "object_type": "triggerschedule"
+    }
+  },
+  "schedules": {
+    "schedule_01IWC4BG8HN0K1uOiu0oazWF6uBO8tkjxLF": {
+      "unique_name": "schedule_01IWC4BG8HN0K1uOiu0oazWF6uBO8tkjxLF",
+      "name": "SWC Alerts - 5 Minutes",
+      "description": "Query Stealthwatch Cloud Alert every 5 minutes",
+      "type": "basic.schedule",
+      "base_type": "schedule",
+      "properties": {
+        "calendar": "calendar_recurring_1BMfMWvgiDhSjBQ7hTSyvz3NyVZ",
+        "timezone": "Etc/GMT+0",
+        "starttime": "00:05",
+        "interval_hours": 0,
+        "interval_minutes": 5,
+        "number_of_times": 287,
+        "display_name": "SWC Alerts - 5 Minutes",
+        "description": "Query Stealthwatch Cloud Alert every 5 minutes"
+      },
+      "version": "1.0.0",
+      "object_type": "schedule"
+    }
+  },
+  "targets": {
+    "definition_target_01GWVYO6DESJV4QggBd683EEfuO1pm4lQAb": {
+      "unique_name": "definition_target_01GWVYO6DESJV4QggBd683EEfuO1pm4lQAb",
+      "name": "Webex",
+      "title": "Webex",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "Webex",
+        "host": "webexapis.com",
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01IQ5B96AUP8O6dGoS4AcWosLEHkyCfkvTR": {
+      "unique_name": "definition_target_01IQ5B96AUP8O6dGoS4AcWosLEHkyCfkvTR",
+      "name": "Cisco Defense Orchestrator",
+      "title": "Cisco Defense Orchestrator",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "Cisco Defense Orchestrator",
+        "host": "www.defenseorchestrator.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01JLJHG0U6UZ13EuKREavGrvz7K5pHlZGdw": {
+      "unique_name": "definition_target_01JLJHG0U6UZ13EuKREavGrvz7K5pHlZGdw",
+      "name": "SWC_Target",
+      "title": "SWC_Target",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": false,
+        "display_name": "SWC_Target",
+        "host": "add-endpoint-here.obsrvbl.com",
+        "ignore_proxy": false,
+        "no_runtime_user": true,
+        "protocol": "https"
+      }
+    }
+  },
+  "table_types": {
+    "tabletype_01ILBCYQL0DNB0ZM9s64NMRkkG3jAqolSK8": {
+      "unique_name": "tabletype_01ILBCYQL0DNB0ZM9s64NMRkkG3jAqolSK8",
+      "data_type": "datatype.tabletype",
+      "display_name": "Port_Scan_Alert_Table",
+      "columns": [
+        {
+          "name": "observ_time",
+          "title": "observ_time",
+          "type": "string"
+        },
+        {
+          "name": "alert_description",
+          "title": "alert_description",
+          "type": "string"
+        },
+        {
+          "name": "alert_time",
+          "title": "alert_time",
+          "type": "string"
+        },
+        {
+          "name": "observ_end_time",
+          "title": "observ_end_time",
+          "type": "string"
+        },
+        {
+          "name": "observ_name",
+          "title": "observ_name",
+          "type": "string"
+        },
+        {
+          "name": "scanner_ip",
+          "title": "scanner_ip",
+          "type": "string"
+        },
+        {
+          "name": "alert_id",
+          "title": "alert_id",
+          "type": "string"
+        },
+        {
+          "name": "alert_text",
+          "title": "alert_text",
+          "type": "string"
+        },
+        {
+          "name": "alert_type",
+          "title": "alert_type",
+          "type": "string"
+        },
+        {
+          "name": "scanned_ip",
+          "title": "scanned_ip",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    },
+    "tabletype_01IMR00OGWEY16FaalvHZYMCKD39cbhuQrW": {
+      "unique_name": "tabletype_01IMR00OGWEY16FaalvHZYMCKD39cbhuQrW",
+      "data_type": "datatype.tabletype",
+      "display_name": "ip_observ_list",
+      "columns": [
+        {
+          "name": "ip_observ",
+          "title": "ip_observ",
+          "type": "string"
+        }
+      ],
+      "base_type": "datatype",
+      "object_type": "tabletype"
+    }
+  }
+}
